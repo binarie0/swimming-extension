@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8s8l4sx1mkwt"]
+
+[ext_resource type="Script" uid="uid://d4no1p8igu6rk" path="res://scripts/swimming_platformer_controller.gd" id="1_6agyq"]
+[ext_resource type="Texture2D" uid="uid://c4xqdbllcd2x4" path="res://icon.svg" id="2_8xumb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lddcg"]
+size = Vector2(124, 126)
+
+[node name="PlatformerController" type="CharacterBody2D" unique_id=1354725015]
+script = ExtResource("1_6agyq")
+PLAYER_SPRITE_PATH = NodePath("Sprite2D")
+ANIMATION_PLAYER_PATH = NodePath("AnimationPlayer")
+ENABLE_SPRINT = true
+metadata/_custom_type_script = "uid://d4no1p8igu6rk"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=824847081]
+texture = ExtResource("2_8xumb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1408162258]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370725322]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_lddcg")

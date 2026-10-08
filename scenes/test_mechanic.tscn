@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://gqfiaabre4gp"]
+
+[ext_resource type="PackedScene" uid="uid://b8s8l4sx1mkwt" path="res://scenes/player_controller.tscn" id="1_syoih"]
+[ext_resource type="Texture2D" uid="uid://c4xqdbllcd2x4" path="res://icon.svg" id="2_qfdju"]
+[ext_resource type="Script" uid="uid://3hmdu4qroi1l" path="res://scripts/water_body_2d.gd" id="3_p7v4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbql3"]
+size = Vector2(333, 316.74994)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lddcg"]
+radius = 250.0
+
+[node name="Node2D" type="Node2D" unique_id=1139568898]
+
+[node name="PlatformerController" parent="." unique_id=1006534717 instance=ExtResource("1_syoih")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=283857554]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1418461156]
+position = Vector2(74.5, 553.625)
+shape = SubResource("RectangleShape2D_kbql3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1511173087]
+position = Vector2(395, 714)
+shape = SubResource("RectangleShape2D_kbql3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1144883427]
+position = Vector2(725, 554)
+shape = SubResource("RectangleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2084197593]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-45, 448)
+texture = ExtResource("2_qfdju")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1086169799]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(67, 603.5)
+scale = Vector2(2.75, 3.4296875)
+texture = ExtResource("2_qfdju")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=1291631857]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(392.99997, 775.00006)
+scale = Vector2(2.75, 3.4296875)
+texture = ExtResource("2_qfdju")
+
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D" unique_id=254246569]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(731, 609)
+scale = Vector2(2.75, 3.4296875)
+texture = ExtResource("2_qfdju")
+
+[node name="WaterBody2D" type="Area2D" parent="." unique_id=40260295]
+position = Vector2(904, 376)
+script = ExtResource("3_p7v4i")
+metadata/_custom_type_script = "uid://3hmdu4qroi1l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBody2D" unique_id=222814412]
+position = Vector2(-512, 216)
+shape = SubResource("CircleShape2D_lddcg")
