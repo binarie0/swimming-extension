@@ -12,13 +12,22 @@ func _ready() -> void:
 	body_exited.connect(_body_exited);
 	pass # Replace with function body.
 
+func _physics_process(delta: float) -> void:
+	for body: PhysicsBody2D in bodies:
+		if body is CharacterBody2D:
+			body.velocity += current_force  * delta * (1. - friction);
+			pass;
+		if (body is RigidBody2D):
+			body.apply_force(current_force  * (1. - friction));
+			pass;
+	
 func _body_entered(body:Node2D):
-	if (body is PhysicsBody2D && body is not StaticBody2D && !body in bodies):
-		print("body entered: ", body);
+	if ((body is RigidBody2D || body is CharacterBody2D) && !body in bodies):
+		#print("body entered: ", body);
 		bodies.push_back(body);
 
 func _body_exited(body: Node2D):
-	if (body is PhysicsBody2D&& body is not StaticBody2D):
+	if (body is RigidBody2D || body is CharacterBody2D):
 		var index:int = bodies.find(body);
 		if (index != -1):
 			bodies.remove_at(index);

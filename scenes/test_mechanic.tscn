@@ -10,6 +10,9 @@ size = Vector2(333, 316.74994)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lddcg"]
 radius = 250.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kbql3"]
+radius = 14.25995
+
 [node name="Node2D" type="Node2D" unique_id=1139568898]
 
 [node name="PlatformerController" parent="." unique_id=1006534717 instance=ExtResource("1_syoih")]
@@ -54,8 +57,21 @@ texture = ExtResource("2_qfdju")
 [node name="WaterBody2D" type="Area2D" parent="." unique_id=40260295]
 position = Vector2(904, 376)
 script = ExtResource("3_p7v4i")
+current_force = Vector2(0, -2500)
+friction = 0.7
 metadata/_custom_type_script = "uid://3hmdu4qroi1l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBody2D" unique_id=222814412]
 position = Vector2(-512, 216)
 shape = SubResource("CircleShape2D_lddcg")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=467693078]
+position = Vector2(269.77362, 36.977905)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=711286269]
+shape = SubResource("CircleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1809329569]
+position = Vector2(0.11315918, 0.1131897)
+scale = Vector2(0.20489359, 0.20489359)
+texture = ExtResource("2_qfdju")
