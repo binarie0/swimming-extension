@@ -16,6 +16,7 @@ radius = 14.25995
 [node name="Node2D" type="Node2D" unique_id=1139568898]
 
 [node name="PlatformerController" parent="." unique_id=1006534717 instance=ExtResource("1_syoih")]
+swim_speed = 1500.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=283857554]
 

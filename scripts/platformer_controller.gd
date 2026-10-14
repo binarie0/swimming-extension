@@ -103,7 +103,6 @@ func physics_tick(delta: float, inputs: Dictionary) -> void:
 
 	manage_animations()
 	manage_state()
-	
 	# We have to handle the gravity after the state
 	handle_gravity(delta) 
 
@@ -161,7 +160,7 @@ func get_input_direction() -> Vector2:
 	var x_dir: float = Input.get_action_strength(ACTION_RIGHT) - Input.get_action_strength(ACTION_LEFT)
 	var y_dir: float = Input.get_action_strength(ACTION_DOWN) - Input.get_action_strength(ACTION_UP)
 
-	return Vector2(x_dir if JOYSTICK_MOVEMENT else sign(x_dir), y_dir if JOYSTICK_MOVEMENT else sign(y_dir))
+	return Vector2.ZERO if x_dir == 0.0 && y_dir == 0.0 else Vector2(x_dir, y_dir).normalized()
 
 
 # ------------------ Movement Logic ---------------------------------
