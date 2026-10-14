@@ -9,6 +9,7 @@ var in_water: bool;
 
 func manage_state() -> void:
 	if (in_water):
+		print("we are swim");
 		state = SWIM;
 	else:
 		super.manage_state();
@@ -23,5 +24,6 @@ func physics_tick(delta: float, inputs: Dictionary) -> void:
 	super.physics_tick(delta, inputs);
 	
 func handle_swimming(delta: float, inputs: Dictionary):
+	
 	pass;
 	

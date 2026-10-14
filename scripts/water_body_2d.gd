@@ -24,6 +24,8 @@ func _physics_process(delta: float) -> void:
 func _body_entered(body:Node2D):
 	if ((body is RigidBody2D || body is CharacterBody2D) && !body in bodies):
 		#print("body entered: ", body);
+		if (body is SwimmingController):
+			body.in_water = true;
 		bodies.push_back(body);
 
 func _body_exited(body: Node2D):
@@ -31,3 +33,5 @@ func _body_exited(body: Node2D):
 		var index:int = bodies.find(body);
 		if (index != -1):
 			bodies.remove_at(index);
+			if (body is SwimmingController):
+				body.in_water = false;
