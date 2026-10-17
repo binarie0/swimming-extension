@@ -57,6 +57,11 @@ sprint={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Everything"
+2d_physics/layer_32="NOT AFFECTED BY WATER"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

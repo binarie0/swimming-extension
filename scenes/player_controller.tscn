@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://d4no1p8igu6rk" path="res://scripts/swimming_platformer_controller.gd" id="1_6agyq"]
 [ext_resource type="Texture2D" uid="uid://c4xqdbllcd2x4" path="res://icon.svg" id="2_8xumb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lddcg"]
-size = Vector2(124, 126)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qq7n"]
+radius = 45.0
+height = 136.0
 
 [node name="PlatformerController" type="CharacterBody2D" unique_id=1354725015]
 script = ExtResource("1_6agyq")
@@ -20,4 +21,4 @@ texture = ExtResource("2_8xumb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370725322]
 position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_lddcg")
+shape = SubResource("CapsuleShape2D_2qq7n")

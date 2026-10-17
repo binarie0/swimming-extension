@@ -10,13 +10,26 @@ size = Vector2(333, 316.74994)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lddcg"]
 radius = 250.0
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p7v4i"]
+rough = true
+absorbent = true
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kbql3"]
 radius = 14.25995
 
 [node name="Node2D" type="Node2D" unique_id=1139568898]
 
 [node name="PlatformerController" parent="." unique_id=1006534717 instance=ExtResource("1_syoih")]
-swim_speed = 1500.0
+platform_floor_layers = 4294967293
+safe_margin = 0.5
+default_water_gravity = Vector2(0, 3)
+swim_speed = 40.0
+ENABLE_WALL_JUMPING = true
+FRICTION = 30.0
+AIR_RESISTENCE = 5.0
+GRAVITY = 8.0
+JUMP_CANCEL_FORCE = 20.0
+WALL_SLIDE_SPEED = 15.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=283857554]
 
@@ -57,8 +70,12 @@ texture = ExtResource("2_qfdju")
 
 [node name="WaterBody2D" type="Area2D" parent="." unique_id=40260295]
 position = Vector2(904, 376)
+collision_layer = 3
+priority = 3
+angular_damp_space_override = 3
+angular_damp = 63.686
 script = ExtResource("3_p7v4i")
-current_force = Vector2(0, -2500)
+current_force = Vector2(4, -40)
 friction = 0.7
 metadata/_custom_type_script = "uid://3hmdu4qroi1l"
 
@@ -67,7 +84,11 @@ position = Vector2(-512, 216)
 shape = SubResource("CircleShape2D_lddcg")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=467693078]
-position = Vector2(269.77362, 36.977905)
+position = Vector2(389.77362, 36.977905)
+collision_layer = 2
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_p7v4i")
+continuous_cd = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=711286269]
 shape = SubResource("CircleShape2D_kbql3")
