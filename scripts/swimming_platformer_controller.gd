@@ -45,7 +45,7 @@ func check_collisions():
 
 func manage_animations() -> void:
 	if (state == SWIM):
-		ANIMATION_PLAYER.play("Swim");
+		play_animation("Swim");
 	super.manage_animations();
 
 func physics_tick(inputs: Dictionary) -> void:

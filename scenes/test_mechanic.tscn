@@ -22,9 +22,11 @@ radius = 14.25995
 [node name="PlatformerController" parent="." unique_id=1006534717 instance=ExtResource("1_syoih")]
 platform_floor_layers = 4294967293
 safe_margin = 0.5
-default_water_gravity = Vector2(0, 3)
+default_water_gravity = Vector2(0, 12)
 swim_speed = 40.0
 ENABLE_WALL_JUMPING = true
+MAX_SPEED = 150.0
+SPRINT_MULTIPLIER = 2.0
 FRICTION = 30.0
 AIR_RESISTENCE = 5.0
 GRAVITY = 8.0
@@ -75,7 +77,7 @@ priority = 3
 angular_damp_space_override = 3
 angular_damp = 63.686
 script = ExtResource("3_p7v4i")
-current_force = Vector2(4, -40)
+current_force = Vector2(4, -60)
 friction = 0.7
 metadata/_custom_type_script = "uid://3hmdu4qroi1l"
 

@@ -126,7 +126,9 @@ func manage_state() -> void:
 		else:
 			state = FALL
 
-
+func play_animation(anim: StringName):
+	if (ANIMATION_PLAYER.has_animation(anim)):
+		ANIMATION_PLAYER.play(anim);
 ## Manages the character's animations based on the current state and [param PLAYER_SPRITE] direction based on
 ## the current horizontal velocity. The expected default animations are [param Idle], [param Walk], [param Jump], and [param Fall]
 func manage_animations() -> void:
@@ -136,15 +138,15 @@ func manage_animations() -> void:
 		PLAYER_SPRITE.flip_h = true
 	match state:
 		IDLE:
-			ANIMATION_PLAYER.play("Idle")
+			play_animation("Idle")
 		WALK:
-			ANIMATION_PLAYER.play("Walk")
+			play_animation("Walk")
 		JUMP:
-			ANIMATION_PLAYER.play("Jump")
+			play_animation("Jump")
 		FALL:
-			ANIMATION_PLAYER.play("Fall")
+			play_animation("Fall")
 		WALL_SLIDE:
-			ANIMATION_PLAYER.play("Fall") # 
+			play_animation("Fall") # 
 
 
 ## Gets the strength and status of the mapped actions
