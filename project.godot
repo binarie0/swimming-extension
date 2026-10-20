@@ -24,6 +24,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="swimming-extension"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/md_previewer/plugin.cfg")
+
 [input]
 
 left={

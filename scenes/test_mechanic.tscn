@@ -72,7 +72,8 @@ texture = ExtResource("2_qfdju")
 
 [node name="WaterBody2D" type="Area2D" parent="." unique_id=40260295]
 position = Vector2(904, 376)
-collision_layer = 3
+collision_layer = 4294967295
+collision_mask = 4294967295
 priority = 3
 angular_damp_space_override = 3
 angular_damp = 63.686

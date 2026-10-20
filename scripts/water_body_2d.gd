@@ -3,6 +3,7 @@ extends Area2D
 class_name WaterBody2D;
 
 const WATER_MASK = ~(1 << 32);
+const PRIORITY = 2;
 
 
 @export var current_force: Vector2;
@@ -11,8 +12,10 @@ const WATER_MASK = ~(1 << 32);
 var bodies: Array[PhysicsBody2D];
 
 func _init() -> void:
-	collision_layer = WATER_MASK;
-	collision_mask = WATER_MASK;
+	if (Engine.is_editor_hint()):
+		collision_layer = WATER_MASK;
+		collision_mask = WATER_MASK;
+		priority = PRIORITY;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	body_entered.connect(_body_entered);
