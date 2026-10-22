@@ -19,6 +19,14 @@ var _gravity_store = 0;
 var _can_wall_jump_store = false;
 var swim_force: Vector2;
 
+var current_water_area: WaterBody2D;
+
+func set_water_area(area: Area2D):
+	if (area is WaterBody2D):
+		current_water_area = area;
+func unset_water_area(area: Area2D):
+	if (area is WaterBody2D && area == current_water_area):
+		current_water_area = null;
 func detect_water(area: Area2D):
 	if (area is WaterBody2D):
 		submerged = true;
@@ -77,6 +85,7 @@ func handle_time_submerged(delta:float) -> void:
 func handle_swimming(inputs: Dictionary):
 	if (state == SWIM):
 		swim_force = (inputs.input_direction * swim_speed + default_water_gravity * (1.0 if submerged else 0.5))
+		swim_force += Vector2.ZERO if current_water_area == null else current_water_area.current_force;
 		velocity += swim_force;
 		
 		

@@ -37,6 +37,13 @@ position = Vector2(0, -45)
 shape = SubResource("CircleShape2D_lddcg")
 debug_color = Color(0.6431264, 0.33569565, 1, 0.41960785)
 
+[node name="Area2D2" type="Area2D" parent="." unique_id=1468527486]
+position = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=610625419]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_2qq7n")
+
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=889689098]
 offset_left = -61.0
 offset_top = -88.0
@@ -46,3 +53,5 @@ show_percentage = false
 
 [connection signal="area_entered" from="Area2D" to="." method="detect_water"]
 [connection signal="area_exited" from="Area2D" to="." method="undetect_water"]
+[connection signal="area_entered" from="Area2D2" to="." method="set_water_area"]
+[connection signal="area_exited" from="Area2D2" to="." method="unset_water_area"]

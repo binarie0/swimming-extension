@@ -25,9 +25,6 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	for body: PhysicsBody2D in bodies:
-		if body is CharacterBody2D:
-			body.velocity += current_force * (1. - friction);
-			
 		if (body is RigidBody2D):
 			body.apply_force(current_force  * (1. - friction));
 			
