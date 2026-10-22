@@ -92,14 +92,14 @@ func check_collisions():
 
 func _physics_process(_delta: float) -> void:
 	var inputs: Dictionary = get_inputs()
-	physics_tick(inputs)
+	physics_tick(_delta, inputs)
 	if (move_and_slide()):
 		check_collisions()
 
 
 ## Overrideable physics process used by the controller that calls whatever functions should be called
 ## and any logic that needs to be done on the [param _physics_process] tick
-func physics_tick(inputs: Dictionary) -> void:
+func physics_tick(_delta: float, inputs: Dictionary) -> void:
 	handle_jump(inputs.input_direction, inputs.jump_strength, inputs.jump_pressed, inputs.jump_released)
 	handle_sprint(inputs.sprint_strength)
 	handle_velocity(inputs.input_direction)
@@ -218,6 +218,7 @@ func handle_sprint(sprint_strength: float) -> void:
 ## Takes delta and the jump action status and strength and handles the jumping logic
 func handle_jump(move_direction: Vector2, jump_strength: float = 0.0, jump_pressed: bool = false, _jump_released: bool = false) -> void:
 	if (jump_pressed or should_jump) and can_jump:
+		
 		apply_jump(move_direction)
 	elif jump_pressed:
 		buffer_jump()

@@ -7,8 +7,12 @@
 radius = 45.0
 height = 136.0
 
-[node name="PlatformerController" type="CharacterBody2D" unique_id=1354725015]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lddcg"]
+radius = 21.213203
+
+[node name="PlatformerController" type="CharacterBody2D" unique_id=1354725015 node_paths=PackedStringArray("submersion_progressbar")]
 script = ExtResource("1_6agyq")
+submersion_progressbar = NodePath("ProgressBar")
 PLAYER_SPRITE_PATH = NodePath("Sprite2D")
 ANIMATION_PLAYER_PATH = NodePath("AnimationPlayer")
 ENABLE_SPRINT = true
@@ -22,3 +26,23 @@ texture = ExtResource("2_8xumb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370725322]
 position = Vector2(1, -1)
 shape = SubResource("CapsuleShape2D_2qq7n")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1190213166]
+zoom = Vector2(0.73, 0.73)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1640320810]
+position = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1719641804]
+shape = SubResource("CircleShape2D_lddcg")
+debug_color = Color(0.6431264, 0.33569565, 1, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=889689098]
+offset_left = -61.0
+offset_top = -88.0
+offset_right = 64.0
+offset_bottom = -61.0
+show_percentage = false
+
+[connection signal="area_entered" from="Area2D" to="." method="detect_water"]
+[connection signal="area_exited" from="Area2D" to="." method="undetect_water"]

@@ -7,8 +7,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbql3"]
 size = Vector2(333, 316.74994)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lddcg"]
-radius = 250.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4ysi"]
+size = Vector2(390, 206)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lddcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7v4i"]
+size = Vector2(1042, 206)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p7v4i"]
 rough = true
@@ -22,14 +27,13 @@ radius = 14.25995
 [node name="PlatformerController" parent="." unique_id=1006534717 instance=ExtResource("1_syoih")]
 platform_floor_layers = 4294967293
 safe_margin = 0.5
-default_water_gravity = Vector2(0, 12)
-swim_speed = 40.0
+default_water_gravity = Vector2(0, 20)
+swim_speed = 35.0
 ENABLE_WALL_JUMPING = true
-MAX_SPEED = 150.0
-SPRINT_MULTIPLIER = 2.0
+MAX_SPEED = 175.0
 FRICTION = 30.0
 AIR_RESISTENCE = 5.0
-GRAVITY = 8.0
+GRAVITY = 14.0
 JUMP_CANCEL_FORCE = 20.0
 WALL_SLIDE_SPEED = 15.0
 
@@ -39,34 +43,40 @@ WALL_SLIDE_SPEED = 15.0
 position = Vector2(74.5, 553.625)
 shape = SubResource("RectangleShape2D_kbql3")
 
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=1086169799]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-7.5, 49.875)
+scale = Vector2(2.75, 3.4296875)
+texture = ExtResource("2_qfdju")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1573235783]
+position = Vector2(1378.5, 617.625)
+scale = Vector2(3.32, 1)
+shape = SubResource("RectangleShape2D_kbql3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/CollisionShape2D4" unique_id=1676629502]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-7.5, 49.875)
+scale = Vector2(2.75, 3.4296875)
+texture = ExtResource("2_qfdju")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1511173087]
 position = Vector2(395, 714)
 shape = SubResource("RectangleShape2D_kbql3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2" unique_id=1291631857]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-2.0000305, 61.00006)
+scale = Vector2(2.75, 3.4296875)
+texture = ExtResource("2_qfdju")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1144883427]
 position = Vector2(725, 554)
 shape = SubResource("RectangleShape2D_kbql3")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2084197593]
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D/CollisionShape2D3" unique_id=254246569]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(-45, 448)
-texture = ExtResource("2_qfdju")
-
-[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1086169799]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(67, 603.5)
-scale = Vector2(2.75, 3.4296875)
-texture = ExtResource("2_qfdju")
-
-[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=1291631857]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(392.99997, 775.00006)
-scale = Vector2(2.75, 3.4296875)
-texture = ExtResource("2_qfdju")
-
-[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D" unique_id=254246569]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(731, 609)
+position = Vector2(6, 55)
 scale = Vector2(2.75, 3.4296875)
 texture = ExtResource("2_qfdju")
 
@@ -74,7 +84,7 @@ texture = ExtResource("2_qfdju")
 position = Vector2(904, 376)
 collision_layer = 4294967295
 collision_mask = 4294967295
-priority = 3
+priority = 2
 angular_damp_space_override = 3
 angular_damp = 63.686
 script = ExtResource("3_p7v4i")
@@ -83,8 +93,36 @@ friction = 0.7
 metadata/_custom_type_script = "uid://3hmdu4qroi1l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBody2D" unique_id=222814412]
-position = Vector2(-512, 216)
-shape = SubResource("CircleShape2D_lddcg")
+position = Vector2(-500, 123)
+shape = SubResource("RectangleShape2D_m4ysi")
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterBody2D" unique_id=1339434684]
+z_index = -4
+position = Vector2(-494.5, 122.500015)
+scale = Vector2(382.99997, 205.00003)
+texture = SubResource("PlaceholderTexture2D_lddcg")
+
+[node name="WaterBody2D2" type="Area2D" parent="." unique_id=1120304100]
+position = Vector2(1584, 376)
+collision_layer = 4294967295
+collision_mask = 4294967295
+priority = 2
+angular_damp_space_override = 3
+angular_damp = 63.686
+script = ExtResource("3_p7v4i")
+current_force = Vector2(-25, -10)
+friction = 0.7
+metadata/_custom_type_script = "uid://3hmdu4qroi1l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBody2D2" unique_id=1094134819]
+position = Vector2(-174, 123)
+shape = SubResource("RectangleShape2D_p7v4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterBody2D2" unique_id=113161246]
+z_index = -4
+position = Vector2(-169.00003, 122.500015)
+scale = Vector2(1033.9999, 205.00003)
+texture = SubResource("PlaceholderTexture2D_lddcg")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=467693078]
 position = Vector2(389.77362, 36.977905)
