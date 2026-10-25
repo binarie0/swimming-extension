@@ -13,6 +13,7 @@ radius = 21.213203
 [node name="PlatformerController" type="CharacterBody2D" unique_id=1354725015 node_paths=PackedStringArray("submersion_progressbar")]
 script = ExtResource("1_6agyq")
 submersion_progressbar = NodePath("ProgressBar")
+default_water_gravity = Vector2(0, 1)
 PLAYER_SPRITE_PATH = NodePath("Sprite2D")
 ANIMATION_PLAYER_PATH = NodePath("AnimationPlayer")
 ENABLE_SPRINT = true

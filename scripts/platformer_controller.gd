@@ -42,6 +42,7 @@ enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
 @export var ACTION_RIGHT: StringName = "right" ## The input mapping for right
 @export var ACTION_JUMP: StringName = "jump" ## The input mapping for jump
 @export var ACTION_SPRINT: StringName = "sprint" ## The input mapping for sprint
+@export var ACTION_CROUCH: StringName = "crouch" ## input mapping for crouch
 
 @export_group("Movement Values")
 # The following float values are in px/sec when used in movement calculations with 'delta'
@@ -157,6 +158,7 @@ func get_inputs() -> Dictionary:
 		jump_pressed = Input.is_action_just_pressed(ACTION_JUMP),
 		jump_released = Input.is_action_just_released(ACTION_JUMP),
 		sprint_strength = Input.get_action_strength(ACTION_SPRINT) if ENABLE_SPRINT else 0.0,
+		crouching = Input.is_action_pressed(ACTION_CROUCH)
 	}
 
 

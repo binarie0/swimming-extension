@@ -86,6 +86,7 @@ func handle_swimming(inputs: Dictionary):
 	if (state == SWIM):
 		swim_force = (inputs.input_direction * swim_speed + default_water_gravity * (1.0 if submerged else 0.5))
 		swim_force += Vector2.ZERO if current_water_area == null else current_water_area.current_force;
+		swim_force += Vector2.ZERO if not inputs.crouching else default_water_gravity * 4.0;
 		velocity += swim_force;
 		
 		
