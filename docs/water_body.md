@@ -15,7 +15,7 @@ A water body applies physics forces to each RigidBody2D or CharacterBody2D insid
 - the force of the "current" as a constant vector.
 
 ### friction: float
--the friction applied to every object's current. This removes velocity for movement.
+- the friction applied to every object's current. This removes velocity for movement.
 
 ## Members
 bodies: Array[PhysicsBody2D]
@@ -36,5 +36,5 @@ bodies: Array[PhysicsBody2D]
 - if the body added is the SwimmingController then body.in_water is set to true
 
 ### _body_exited(body:Node2D) -> void
--removes a physics body from bodies
+- removes a physics body from bodies
 - if the body is a SwimmingController then body.in_water is set to false
