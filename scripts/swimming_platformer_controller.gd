@@ -3,6 +3,9 @@ extends PlatformerController
 
 enum {SWIM = 8}
 
+signal player_lose_oxygen();
+
+
 @export var max_time_submerged:float = 5.0;
 @export var submersion_progressbar: ProgressBar;
 @export var default_water_gravity: Vector2 = Vector2.ZERO;
@@ -15,6 +18,8 @@ var time_submerged = 0.0:
 	set(v):
 		time_submerged = v;
 		submersion_progressbar.value = submersion_progressbar.max_value * (time_submerged / max_time_submerged);
+		if (time_submerged > max_time_submerged):
+			player_lose_oxygen.emit();
 var _gravity_store = 0;
 var _can_wall_jump_store = false;
 var swim_force: Vector2;
@@ -58,6 +63,7 @@ func manage_state() -> void:
 func _ready() -> void:
 	_gravity_store = GRAVITY;
 	_can_wall_jump_store = can_wall_jump;
+	
 
 	
 func check_collisions():
