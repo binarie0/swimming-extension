@@ -160,3 +160,78 @@ shape = SubResource("CircleShape2D_kbql3")
 position = Vector2(0.11315918, 0.1131897)
 scale = Vector2(0.20489359, 0.20489359)
 texture = ExtResource("2_qfdju")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=1573484877]
+position = Vector2(349.77362, 36.977905)
+collision_layer = 2
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_p7v4i")
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=813398602]
+shape = SubResource("CircleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2" unique_id=625486623]
+position = Vector2(0.11315918, 0.1131897)
+scale = Vector2(0.20489359, 0.20489359)
+texture = ExtResource("2_qfdju")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=861658801]
+position = Vector2(373.77362, -3.0220947)
+collision_layer = 2
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_p7v4i")
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" unique_id=29856884]
+shape = SubResource("CircleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3" unique_id=801976928]
+position = Vector2(0.11315918, 0.1131897)
+scale = Vector2(0.20489359, 0.20489359)
+texture = ExtResource("2_qfdju")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="." unique_id=378448010]
+position = Vector2(421.77362, -11.022095)
+collision_layer = 2
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_p7v4i")
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1057210272]
+shape = SubResource("CircleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4" unique_id=1328806489]
+position = Vector2(0.11315918, 0.1131897)
+scale = Vector2(0.20489359, 0.20489359)
+texture = ExtResource("2_qfdju")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="." unique_id=2066496429]
+position = Vector2(437.77362, 28.977905)
+collision_layer = 2
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_p7v4i")
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5" unique_id=1706213291]
+shape = SubResource("CircleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D5" unique_id=1785747303]
+position = Vector2(0.11315918, 0.1131897)
+scale = Vector2(0.20489359, 0.20489359)
+texture = ExtResource("2_qfdju")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="." unique_id=1360313661]
+position = Vector2(469.77362, 52.977905)
+collision_layer = 2
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_p7v4i")
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6" unique_id=1529022999]
+shape = SubResource("CircleShape2D_kbql3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D6" unique_id=650312403]
+position = Vector2(0.11315918, 0.1131897)
+scale = Vector2(0.20489359, 0.20489359)
+texture = ExtResource("2_qfdju")
